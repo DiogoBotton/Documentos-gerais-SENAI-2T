@@ -28,3 +28,8 @@ delete from Albuns where Id = @AlbumId;
 
 execute DeleteAlbumId 3;
 
+create procedure GetAlbumName
+@NameAlbum varchar(50)
+as
+select a.Nome, ar.Nome from Albuns as A join Artistas as AR on a.ArtistaId = ar.Id;
+

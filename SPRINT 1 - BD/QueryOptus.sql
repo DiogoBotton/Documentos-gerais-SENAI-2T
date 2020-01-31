@@ -1,5 +1,7 @@
 create database Optus_Tarde;
 
+use Optus_Tarde;
+
 create table Estilos (
 	Id int primary key identity(1,1),
 	Nome varchar(50)
@@ -14,11 +16,12 @@ select * from Estilos;
 
 create table Artistas (
 	Id int primary key identity (1,1),
-	Nome varchar(50)
+	Nome varchar(50),
+	EstiloId INT foreign key references Estilos(Id)
 );
-insert Artistas (Nome) values ('Legião Urbana');
-insert Artistas (Nome) values ('Pink Floyd');
-insert Artistas (Nome) values ('UFO');
+insert Artistas (Nome, EstiloId) values ('Legião Urbana', 1),('Pink Floyd', 4), ('UFO', 2);
+insert Artistas (Nome, EstiloId) values ('Metallica', 2);
+--insert Artistas (Nome) values ('UFO');
 
 
 select * from Artistas;
@@ -26,11 +29,17 @@ select * from Artistas;
 create table Albuns (
 	Id int primary key identity (1,1),
 	Nome varchar(50),
-	ArtistaId int foreign key references Artistas(Id),
+	QtdMinutos INT,
+	Visualizacoes INT,
+	Localizacao varchar(50),
+	DataLancamento date,
+	EstiloId int foreign key references Estilos(Id),
+	ArtistaId int foreign key references Artistas(Id)
 );
 
-insert Albuns (Nome, ArtistaId) values ('As Quatro Estações', 1),('The Dark Side of the Moon', 2),('Phenomenon', 3);
---insert Albuns (Nome, ArtistaId) values ('The Dark Side of the Moon', 2);
+insert Albuns values ('As Quatro Estações', 50, 45, 'RJ','27-09-2000',2,1),('The Dark Side of the Moon', 30,48, 'UK','28-07-1978',4,2),('Phenomenon', 25,67,'USA','06-05-1980',2,3);
+insert Albuns values ('Dois', 25, 54, 'RJ','27-03-1992',2,1);
+insert Albuns values ('V', 22, 58, 'RJ','27-03-1992',2,1);
 --insert Albuns (Nome, ArtistaId) values ('Phenomenon', 3);
 
 select * from Albuns;
@@ -40,18 +49,18 @@ select * from Albuns;
 --Excluir todos os registros de uma tabela (apenas funciona se a entidade não for referenciada em outra tabela)
 truncate table Albuns;
 
-create table AlbumEstilos(
-	Id int primary key identity(1,1),
-	AlbumId int foreign key references Albuns(Id),
-	EstiloId int foreign key references Estilos(Id)
-);
+--create table AlbumEstilos(
+--	Id int primary key identity(1,1),
+--	AlbumId int foreign key references Albuns(Id),
+--	EstiloId int foreign key references Estilos(Id)
+--);
 
-insert AlbumEstilos (AlbumId, EstiloId) values (1,1);
-insert AlbumEstilos (AlbumId, EstiloId) values (2,4);
-insert AlbumEstilos (AlbumId, EstiloId) values (3,1);
-insert AlbumEstilos (AlbumId, EstiloId) values (3,1);
+--insert AlbumEstilos (AlbumId, EstiloId) values (1,1);
+--insert AlbumEstilos (AlbumId, EstiloId) values (2,4);
+--insert AlbumEstilos (AlbumId, EstiloId) values (3,1);
+--insert AlbumEstilos (AlbumId, EstiloId) values (3,1);
 
-select * from AlbumEstilos;
+--select * from AlbumEstilos;
 
 --delete AlbumEstilos where AlbumId = 2;
 
@@ -75,3 +84,5 @@ create table Usuarios(
 );
 insert Usuarios (Nome, TipoUsuarioId) values ('Saulo', 2);
 insert Usuarios (Nome, TipoUsuarioId) values ('Carol', 1);
+
+select Nome from Albuns where ArtistaId = 1;
