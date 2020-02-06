@@ -1,0 +1,40 @@
+Plataforma da escola Gufi:
+
+PerfisUsuario:
+	-Id; int
+	-Descrição; varchar()
+
+Usuarios:
+	-Id int
+	-Nome; varchar()
+	-Email; varchar()
+	-Senha; varchar()
+	-Genero; varchar();
+	-DataNascimento; date
+	-PerfisUsuarioId; int foreign key references
+
+Instituição:
+	-Id; int
+	-CNPJ; varchar()
+	-nomeFantasia/RazãoSocial; varchar()
+	-Endereço; varchar()
+
+TemaEvento:
+	-id; int
+	-Descrição; varchar()
+Evento:
+	-Id; int
+	-NomeEvento; varchar()
+	-DataEvento; date
+	-Acesso; bool ?(livre ou restrito)
+	-Descrição; varchar()
+	-InstituiçãoId; int
+	-TemaEventoId; int foreign key references
+
+Presença: ()
+	-Id; int
+	-EventoId;
+	-UsuarioId;
+	
+
+ 
