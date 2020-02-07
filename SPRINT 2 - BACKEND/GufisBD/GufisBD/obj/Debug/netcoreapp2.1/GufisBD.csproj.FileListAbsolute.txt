@@ -1,0 +1,14 @@
+C:\Users\42299106812\source\repos\GufisBD\GufisBD\bin\Debug\netcoreapp2.1\GufisBD.deps.json
+C:\Users\42299106812\source\repos\GufisBD\GufisBD\bin\Debug\netcoreapp2.1\GufisBD.runtimeconfig.json
+C:\Users\42299106812\source\repos\GufisBD\GufisBD\bin\Debug\netcoreapp2.1\GufisBD.runtimeconfig.dev.json
+C:\Users\42299106812\source\repos\GufisBD\GufisBD\bin\Debug\netcoreapp2.1\GufisBD.dll
+C:\Users\42299106812\source\repos\GufisBD\GufisBD\bin\Debug\netcoreapp2.1\GufisBD.pdb
+C:\Users\42299106812\source\repos\GufisBD\GufisBD\obj\Debug\netcoreapp2.1\GufisBD.csprojAssemblyReference.cache
+C:\Users\42299106812\source\repos\GufisBD\GufisBD\obj\Debug\netcoreapp2.1\GufisBD.csproj.CoreCompileInputs.cache
+C:\Users\42299106812\source\repos\GufisBD\GufisBD\obj\Debug\netcoreapp2.1\GufisBD.RazorAssemblyInfo.cache
+C:\Users\42299106812\source\repos\GufisBD\GufisBD\obj\Debug\netcoreapp2.1\GufisBD.RazorAssemblyInfo.cs
+C:\Users\42299106812\source\repos\GufisBD\GufisBD\obj\Debug\netcoreapp2.1\GufisBD.AssemblyInfoInputs.cache
+C:\Users\42299106812\source\repos\GufisBD\GufisBD\obj\Debug\netcoreapp2.1\GufisBD.AssemblyInfo.cs
+C:\Users\42299106812\source\repos\GufisBD\GufisBD\obj\Debug\netcoreapp2.1\GufisBD.RazorTargetAssemblyInfo.cache
+C:\Users\42299106812\source\repos\GufisBD\GufisBD\obj\Debug\netcoreapp2.1\GufisBD.dll
+C:\Users\42299106812\source\repos\GufisBD\GufisBD\obj\Debug\netcoreapp2.1\GufisBD.pdb
