@@ -1,0 +1,47 @@
+Prontuario = paciente
+
+Clinica:
+	-Id;
+	-Endereço;
+	-HoraFuncionamentoInicio;
+	-HoraFuncionamentoFim;
+	-CNPJ;
+	-RazaoSocial;
+
+TipoUsuario:
+	-Id;
+	-Titulo;
+
+Usuario:
+	-Id;
+	-Nome;
+	-Email;
+	-Senha;
+	-TipoUsuarioId;
+
+ProntuarioPaciente:
+	-Id;
+	-RG;
+	-CPF;
+	-Endereço;
+	-DataNascimento;
+	-Telefone;
+	-UsuarioId;
+
+AreaSaude:
+	-Id;
+	-Titulo;
+
+Medico:
+	-Id;
+	-CRM (7 digitos);
+	-UsuarioId;
+	-AreaSaudeId;
+
+Consulta:
+	-Id;
+	-DataConsulta;
+	-Descrição;
+	-MedicoId;
+	-ProntuarioPacienteId;
+	-ClinicaId;
