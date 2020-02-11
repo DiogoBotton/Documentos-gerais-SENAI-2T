@@ -20,7 +20,6 @@ namespace GufisBD.Repositories.Contexts
 
         public GufisContext(DbContextOptions<GufisContext> options) : base(options)
         {
-            
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -31,15 +30,6 @@ namespace GufisBD.Repositories.Contexts
             modelBuilder.ApplyConfiguration(new UsuarioEntityTypeConfiguration());
             modelBuilder.ApplyConfiguration(new EventoEntityTypeConfiguration());
             modelBuilder.ApplyConfiguration(new PresencaEntityTypeConfiguration());
-        }
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            IConfigurationRoot configuration = new ConfigurationBuilder()
-                .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
-                .AddJsonFile("appsettings.json")
-                .Build();
-            optionsBuilder.UseSqlServer(configuration.GetConnectionString("DefaultConnection"));
         }
     }
 }

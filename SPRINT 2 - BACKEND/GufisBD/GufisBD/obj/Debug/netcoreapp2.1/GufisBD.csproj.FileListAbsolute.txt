@@ -12,3 +12,18 @@ C:\Users\42299106812\source\repos\GufisBD\GufisBD\obj\Debug\netcoreapp2.1\GufisB
 C:\Users\42299106812\source\repos\GufisBD\GufisBD\obj\Debug\netcoreapp2.1\GufisBD.RazorTargetAssemblyInfo.cache
 C:\Users\42299106812\source\repos\GufisBD\GufisBD\obj\Debug\netcoreapp2.1\GufisBD.dll
 C:\Users\42299106812\source\repos\GufisBD\GufisBD\obj\Debug\netcoreapp2.1\GufisBD.pdb
+C:\Users\diogo\Desktop\Documentos-gerais-SENAI-2T\SPRINT 2 - BACKEND\GufisBD\GufisBD\bin\Debug\netcoreapp2.1\appsettings.json
+C:\Users\diogo\Desktop\Documentos-gerais-SENAI-2T\SPRINT 2 - BACKEND\GufisBD\GufisBD\bin\Debug\netcoreapp2.1\Properties\launchSettings.json
+C:\Users\diogo\Desktop\Documentos-gerais-SENAI-2T\SPRINT 2 - BACKEND\GufisBD\GufisBD\bin\Debug\netcoreapp2.1\GufisBD.deps.json
+C:\Users\diogo\Desktop\Documentos-gerais-SENAI-2T\SPRINT 2 - BACKEND\GufisBD\GufisBD\bin\Debug\netcoreapp2.1\GufisBD.runtimeconfig.json
+C:\Users\diogo\Desktop\Documentos-gerais-SENAI-2T\SPRINT 2 - BACKEND\GufisBD\GufisBD\bin\Debug\netcoreapp2.1\GufisBD.runtimeconfig.dev.json
+C:\Users\diogo\Desktop\Documentos-gerais-SENAI-2T\SPRINT 2 - BACKEND\GufisBD\GufisBD\bin\Debug\netcoreapp2.1\GufisBD.dll
+C:\Users\diogo\Desktop\Documentos-gerais-SENAI-2T\SPRINT 2 - BACKEND\GufisBD\GufisBD\bin\Debug\netcoreapp2.1\GufisBD.pdb
+C:\Users\diogo\Desktop\Documentos-gerais-SENAI-2T\SPRINT 2 - BACKEND\GufisBD\GufisBD\obj\Debug\netcoreapp2.1\GufisBD.csprojAssemblyReference.cache
+C:\Users\diogo\Desktop\Documentos-gerais-SENAI-2T\SPRINT 2 - BACKEND\GufisBD\GufisBD\obj\Debug\netcoreapp2.1\GufisBD.RazorAssemblyInfo.cache
+C:\Users\diogo\Desktop\Documentos-gerais-SENAI-2T\SPRINT 2 - BACKEND\GufisBD\GufisBD\obj\Debug\netcoreapp2.1\GufisBD.RazorAssemblyInfo.cs
+C:\Users\diogo\Desktop\Documentos-gerais-SENAI-2T\SPRINT 2 - BACKEND\GufisBD\GufisBD\obj\Debug\netcoreapp2.1\GufisBD.AssemblyInfoInputs.cache
+C:\Users\diogo\Desktop\Documentos-gerais-SENAI-2T\SPRINT 2 - BACKEND\GufisBD\GufisBD\obj\Debug\netcoreapp2.1\GufisBD.AssemblyInfo.cs
+C:\Users\diogo\Desktop\Documentos-gerais-SENAI-2T\SPRINT 2 - BACKEND\GufisBD\GufisBD\obj\Debug\netcoreapp2.1\GufisBD.RazorTargetAssemblyInfo.cache
+C:\Users\diogo\Desktop\Documentos-gerais-SENAI-2T\SPRINT 2 - BACKEND\GufisBD\GufisBD\obj\Debug\netcoreapp2.1\GufisBD.dll
+C:\Users\diogo\Desktop\Documentos-gerais-SENAI-2T\SPRINT 2 - BACKEND\GufisBD\GufisBD\obj\Debug\netcoreapp2.1\GufisBD.pdb
