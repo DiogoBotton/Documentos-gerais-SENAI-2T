@@ -3,6 +3,8 @@ Prontuario = paciente
 Clinica:
 	-Id;
 	-Endereço;
+	-NomeFantasia;
+	-RazaoSocial;
 	-HoraFuncionamentoInicio;
 	-HoraFuncionamentoFim;
 	-CNPJ;
@@ -37,6 +39,11 @@ Medico:
 	-CRM (7 digitos);
 	-UsuarioId;
 	-AreaSaudeId;
+	-ClinicaId;
+
+StatusConsulta:
+	-Id;
+	-Titulo;
 
 Consulta:
 	-Id;
