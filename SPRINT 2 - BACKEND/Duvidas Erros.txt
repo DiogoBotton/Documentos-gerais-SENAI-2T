@@ -1,0 +1,5 @@
+A introdução da restrição FOREIGN KEY 'FK_Consultas_ProntuariosPacientes_ProntuarioPacienteId' na tabela 
+'Consultas' pode causar ciclos ou vários caminhos em cascata. Especifique ON DELETE NO ACTION ou ON UPDATE NO ACTION, 
+ou modifique outras restrições FOREIGN KEY.
+
+Não foi possível criar a restrição ou o índice. Consulte os erros anteriores.

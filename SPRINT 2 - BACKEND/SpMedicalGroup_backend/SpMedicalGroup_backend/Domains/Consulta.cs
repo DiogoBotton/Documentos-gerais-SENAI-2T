@@ -12,7 +12,6 @@ namespace SpMedicalGroup_backend.Domains
         public string Descricao { get; set; }
         public int MedicoId { get; set; }
         public int ProntuarioPacienteId { get; set; }
-        public int ClinicaId { get; set; }
         public int StatusConsultaId { get; set; }
 
         public Consulta()

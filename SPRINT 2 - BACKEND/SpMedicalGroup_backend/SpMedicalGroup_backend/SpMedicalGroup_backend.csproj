@@ -5,6 +5,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20200213002115_SpMedGroupContextDb.cs" />
+    <Compile Remove="Migrations\20200213002115_SpMedGroupContextDb.Designer.cs" />
+    <Compile Remove="Migrations\20200213002653_SpMedGroupContextDb.cs" />
+    <Compile Remove="Migrations\20200213002653_SpMedGroupContextDb.Designer.cs" />
+    <Compile Remove="Migrations\20200213004121_SpMedGroupContextDb.cs" />
+    <Compile Remove="Migrations\20200213004121_SpMedGroupContextDb.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Controllers\" />
     <Folder Include="Infraestructure\Repositories\" />
     <Folder Include="wwwroot\" />

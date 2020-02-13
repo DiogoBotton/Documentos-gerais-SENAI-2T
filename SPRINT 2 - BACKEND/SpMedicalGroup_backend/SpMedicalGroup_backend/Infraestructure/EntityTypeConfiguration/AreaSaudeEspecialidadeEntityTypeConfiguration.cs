@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace SpMedicalGroup_backend.Infraestructure.EntityTypeConfiguration
 {
-    public class TipoUsuarioEntityTypeConfiguration : IEntityTypeConfiguration<TipoUsuario>
+    public class AreaSaudeEspecialidadeEntityTypeConfiguration : IEntityTypeConfiguration<AreaSaudeEspecialidade>
     {
-        public void Configure(EntityTypeBuilder<TipoUsuario> builder)
+        public void Configure(EntityTypeBuilder<AreaSaudeEspecialidade> builder)
         {
-            builder.ToTable("TiposUsuarios");
+            builder.ToTable("AreasSaudeEspecialidades");
 
             builder.Property(x => x.Id).IsRequired();
             builder.HasKey(x => x.Id);

@@ -8,17 +8,17 @@ using System.Threading.Tasks;
 
 namespace SpMedicalGroup_backend.Infraestructure.EntityTypeConfiguration
 {
-    public class TipoUsuarioEntityTypeConfiguration : IEntityTypeConfiguration<TipoUsuario>
+    public class ClinicaEntityTypeConfiguration : IEntityTypeConfiguration<Clinica>
     {
-        public void Configure(EntityTypeBuilder<TipoUsuario> builder)
+        public void Configure(EntityTypeBuilder<Clinica> builder)
         {
-            builder.ToTable("TiposUsuarios");
+            builder.ToTable("Clinicas");
 
             builder.Property(x => x.Id).IsRequired();
             builder.HasKey(x => x.Id);
 
-            builder.Property(x => x.Titulo).IsRequired();
-            builder.HasIndex(x => x.Titulo)
+            builder.Property(x => x.CNPJ).IsRequired();
+            builder.HasIndex(x => x.CNPJ)
                 .IsUnique();
         }
     }
