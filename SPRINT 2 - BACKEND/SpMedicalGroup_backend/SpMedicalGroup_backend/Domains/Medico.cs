@@ -1,17 +1,17 @@
-﻿using System;
+﻿using SpMedicalGroup_backend.SeedWork;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace SpMedicalGroup_backend.Domains
 {
-    public class Medico
+    public class Medico : AbstractDomain
     {
-        public int Id { get; set; }
         public string CRM { get; set; }
-        public int UsuarioId { get; set; }
-        public int AreaSaudeEspecialidadeId { get; set; }
-        public int ClinicaId { get; set; }
+        public long UsuarioId { get; set; }
+        public long AreaSaudeEspecialidadeId { get; set; }
+        public long ClinicaId { get; set; }
 
         public Medico()
         {

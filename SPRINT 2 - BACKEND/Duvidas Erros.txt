@@ -13,3 +13,12 @@ Não foi possível criar a restrição ou o índice. Consulte os erros anteriore
                     .ToList()
                     .ForEach(fk => fk.DeleteBehavior = DeleteBehavior.Restrict);
             }
+
+Relatório de Erros:
+
+-REGISTROS BAGUNÇADOS: Com os métodos HaxIndex e IsUnique no mapeamento, a ordem dos registros ficavam desorganizados,
+por exemplo, a tabela StatusConsulta com HasIndex na propriedade Titulo (varchar) organizava os registros
+por ordem alfabética (filtro). Foi preciso remover estes métodos para organizar novamente os registros
+da forma correta
+
+OBS IMPORTANTE: Ao criar uma migration, nunca criar com o mesmo nome da classe context.

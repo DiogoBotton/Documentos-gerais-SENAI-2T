@@ -18,8 +18,6 @@ namespace SpMedicalGroup_backend.Infraestructure.EntityTypeConfiguration
             builder.HasKey(x => x.Id);
 
             builder.Property(x => x.CNPJ).IsRequired();
-            builder.HasIndex(x => x.CNPJ)
-                .IsUnique();
         }
     }
 }

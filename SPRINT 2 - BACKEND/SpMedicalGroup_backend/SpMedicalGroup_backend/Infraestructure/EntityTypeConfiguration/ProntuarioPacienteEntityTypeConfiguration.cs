@@ -18,8 +18,6 @@ namespace SpMedicalGroup_backend.Infraestructure.EntityTypeConfiguration
             builder.HasKey(x => x.Id);
 
             builder.Property(x => x.RG).IsRequired();
-            builder.HasIndex(x => x.RG)
-                .IsUnique();
 
             builder.HasOne<Usuario>()
                 .WithMany()

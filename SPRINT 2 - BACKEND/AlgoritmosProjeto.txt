@@ -1,0 +1,9 @@
+Para criar Jobs:
+1- (Domains) Criar Domain;
+2- (Interfaces) Criar Interface do repository;
+3- (Infraestructure --> Repositories) Criar Repository;
+
+No caso de Status ou valores padrões, criar DefaultValues
+
+4- (Helpers --> Implementations) Criar Job;
+5- (Helpers) Em ConfigureJobs.cs, acrescentar na lista "jobs" a classe criada anteriormente;
