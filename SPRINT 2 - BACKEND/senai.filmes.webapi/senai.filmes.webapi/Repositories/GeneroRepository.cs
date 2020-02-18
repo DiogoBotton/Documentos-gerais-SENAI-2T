@@ -72,7 +72,35 @@ namespace senai.Filmes.WebApi.Repositories
             return generos;
         }
 
-        public GeneroDomain Insert (GeneroDomain generoDomain)
+        public GeneroDomain GetById(int idGenero)
+        {
+            GeneroDomain generoDomain = null;
+            using (SqlConnection con = new SqlConnection(StringConexao))
+            {
+                //Propriedade direto na string (interpolação), risco de SQL INJECTION
+                string query = $"select IdGenero, Nome from Generos where IdGenero = {idGenero}";
+
+                con.Open();
+
+                SqlDataReader rdr;
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    rdr = cmd.ExecuteReader();
+
+                    while (rdr.Read())
+                    {
+                        generoDomain = new GeneroDomain()
+                        {
+                            IdGenero = Convert.ToInt32(rdr["IdGenero"]),
+                            Nome = rdr["Nome"].ToString(),
+                        };
+                    }
+                }
+            }
+            return generoDomain;
+        }
+
+        public GeneroDomain Insert(GeneroDomain generoDomain)
         {
             using (SqlConnection con = new SqlConnection(StringConexao))
             {
@@ -80,12 +108,40 @@ namespace senai.Filmes.WebApi.Repositories
 
                 con.Open();
 
-                using(SqlCommand cmd = new SqlCommand(query, con))
+                using (SqlCommand cmd = new SqlCommand(query, con))
                 {
                     cmd.ExecuteNonQuery();
                 }
             }
             return generoDomain;
+        }
+        public GeneroDomain Update(int idGenero, GeneroDomain generoDomain)
+        {
+            using (SqlConnection con = new SqlConnection(StringConexao))
+            {
+                string query = $"update Generos set Nome = '{generoDomain.Nome}' where IdGenero = '{idGenero}'";
+
+                con.Open();
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            generoDomain.IdGenero = idGenero;
+            return generoDomain;
+        }
+        public void Delete(int idGenero)
+        {
+            using (SqlConnection con = new SqlConnection(StringConexao))
+            {
+                string query = $"delete from Generos where IdGenero = {idGenero}";
+
+                con.Open();
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.ExecuteNonQuery();
+                }
+            }
         }
 
     }

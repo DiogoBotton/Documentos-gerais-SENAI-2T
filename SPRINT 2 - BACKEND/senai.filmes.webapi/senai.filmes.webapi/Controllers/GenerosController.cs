@@ -48,16 +48,37 @@ namespace senai.Filmes.WebApi.Controllers
             // Faz a chamada para o método .Listar();
             return _generoRepository.Listar();
         }
+
+        [HttpGet("{idGenero}")]
+        public IActionResult GetbyId(int idGenero)
+        {
+            var result = _generoRepository.GetById(idGenero);
+
+            if (result == null)
+                return NotFound(new {
+                    mensagem = "Genero não encontrado.",
+                    erro = true,
+                });
+
+            //Ou retornar StatusCode(201) - Created
+            return Ok(result);
+        }
         
         [HttpPost]
         public GeneroDomain Post(GeneroDomain generoDomain)
         {
             return _generoRepository.Insert(generoDomain);
         }
-        [HttpPut("{id}")]
-        public GeneroDomain Update(GeneroDomain generoDomain)
+        [HttpPut("{idGenero}")]
+        public GeneroDomain Update(int idGenero, GeneroDomain generoDomain)
         {
-
+            return _generoRepository.Update(idGenero, generoDomain);
+        }
+        [HttpDelete]
+        public string Delete (int idGenero)
+        {
+            _generoRepository.Delete(idGenero);
+            return $"{idGenero} deletado";
         }
     }
 }
