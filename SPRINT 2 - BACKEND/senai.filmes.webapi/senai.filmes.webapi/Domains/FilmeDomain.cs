@@ -16,6 +16,7 @@ namespace senai.Filmes.WebApi.Domains
 
         public int IdGenero { get; set; }
 
+        //Este apenas para retorno (como ViewModel)
         public GeneroDomain Genero { get; set; }
     }
 }
