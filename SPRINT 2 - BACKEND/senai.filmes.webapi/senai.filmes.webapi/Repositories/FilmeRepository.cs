@@ -23,7 +23,7 @@ namespace senai.Filmes.WebApi.Repositories
         /// Lista todos os gêneros
         /// </summary>
         /// <returns>Retorna uma lista de gêneros</returns>
-        public List<FilmeDomain> Listar()
+        public IEnumerable<FilmeDomain> Listar()
         {
             // Cria uma lista generos onde serão armazenados os dados
             List<FilmeDomain> filmes = new List<FilmeDomain>();
@@ -77,7 +77,7 @@ namespace senai.Filmes.WebApi.Repositories
             return filmes;
         }
 
-        public List<FilmeDomain> GetByTitulo(string filtro)
+        public IEnumerable<FilmeDomain> GetByTitulo(string filtro)
         {
             // Cria uma lista generos onde serão armazenados os dados
             List<FilmeDomain> filmes = new List<FilmeDomain>();

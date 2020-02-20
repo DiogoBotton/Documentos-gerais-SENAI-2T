@@ -27,10 +27,15 @@ namespace senai.Filmes.WebApi.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<FilmeDomain> Get()
+        public IActionResult Get()
         {
             // Faz a chamada para o método .Listar();
-            return _filmesRepository.Listar();
+            var result = _filmesRepository.Listar();
+
+            //Ordena em ordem alfabética (orderBy -> Linq)
+            result = result.OrderBy(x => x.Titulo).ToList();
+            return Ok(result);
+
         }
 
         [HttpGet("{idGenero}")]
@@ -44,7 +49,7 @@ namespace senai.Filmes.WebApi.Controllers
                     mensagem = "Genero não encontrado.",
                     erro = true,
                 });
-
+            
             //Ou retornar StatusCode(201) - Created
             return Ok(result);
         }
@@ -53,6 +58,7 @@ namespace senai.Filmes.WebApi.Controllers
         public IActionResult GetByTitulo(string filtro)
         {
             var result = _filmesRepository.GetByTitulo(filtro);
+            result.OrderBy(x => x.Titulo).ToList();
             return Ok(result);
         }
 

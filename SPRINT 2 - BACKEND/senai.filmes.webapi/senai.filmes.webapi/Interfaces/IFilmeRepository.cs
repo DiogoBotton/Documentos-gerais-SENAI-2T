@@ -8,11 +8,11 @@ namespace senai.Filmes.WebApi.Interfaces
 {
     public interface IFilmesRepository
     {
-        List<FilmeDomain> Listar();
+        IEnumerable<FilmeDomain> Listar();
         FilmeDomain Insert(FilmeDomain filmeDomain);
         FilmeDomain Update(int idGenero, FilmeDomain filmeDomain);
         void Delete(int idGenero);
         FilmeDomain GetById(int idGenero);
-        List<FilmeDomain> GetByTitulo(string filtro);
+        IEnumerable<FilmeDomain> GetByTitulo(string filtro);
     }
 }
