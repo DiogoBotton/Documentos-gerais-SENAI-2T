@@ -25,6 +25,25 @@ namespace Senai.Peoples.WebApi.Controllers
         {
             _funcionarioRepository = new FuncionarioRepository();
         }
+
+        [HttpGet("ordem/{ordem}")]
+        public IActionResult GetDescOrAsc(string ordem)
+        {
+            if (ordem != "asc" && ordem != "desc")
+                return BadRequest("Escolha uma ordenação válida 'desc' ou 'asc'");
+
+            var result = _funcionarioRepository.Listar();
+
+            if(ordem == "asc")
+                result = result.OrderBy(x => x.Nome).ToList();
+
+            if (ordem == "desc")
+                result = result.OrderByDescending(x => x.Nome).ToList();
+
+            return Ok(result);
+
+        }
+
         [HttpGet]
         public IActionResult Get()
         {
@@ -54,16 +73,25 @@ namespace Senai.Peoples.WebApi.Controllers
         }
 
         [HttpGet("filtro/{filtro}")]
-        public IActionResult GetByTitulo(string filtro)
+        public IActionResult GetByNome(string filtro)
         {
             var result = _funcionarioRepository.GetByNome(filtro);
             result.OrderBy(x => x.Nome).ToList();
-            return Ok(result);
+
+            var listaNomeCompleto = result.Select(x => new
+            {
+                nomeCompleto = $"{x.Nome} {x.Sobrenome}"
+            }).ToList();
+
+            return Ok(listaNomeCompleto);
         }
 
         [HttpPost]
         public IActionResult Post(Funcionario funcionario)
         {
+            if (string.IsNullOrEmpty(funcionario.Nome) || string.IsNullOrEmpty(funcionario.Sobrenome))
+                return BadRequest("Valores 'Nome' e/ou 'Sobrenome' vazios.");
+
             var result = _funcionarioRepository.Insert(funcionario);
             return Ok(result);
         }
@@ -72,7 +100,7 @@ namespace Senai.Peoples.WebApi.Controllers
         {
             return _funcionarioRepository.Update(id, funcionario);
         }
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public string Delete(int id)
         {
             _funcionarioRepository.Delete(id);
