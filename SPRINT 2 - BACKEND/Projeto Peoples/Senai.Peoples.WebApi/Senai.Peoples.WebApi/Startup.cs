@@ -32,7 +32,9 @@ namespace Senai.Peoples.WebApi
             services.AddDbContext<PeoplesContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
+            //*
             //Configurando o JWT (Autentificação)
+            //*
             services.AddAuthentication(options =>
             {
                 options.DefaultAuthenticateScheme = "JwtBearer";
@@ -53,12 +55,16 @@ namespace Senai.Peoples.WebApi
                     ValidateLifetime = true,
 
                     //Forma da criptografia
-                    IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("nome-da-assinatura")),
+                    IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("peoples-chave-autenticacao")),
 
                     //Tempo de expiração do token
                     ClockSkew = TimeSpan.FromMinutes(30),
 
+                    // Nome da issuer, de onde está vindo
+                    ValidIssuer = "Filmes.WebApi",
 
+                    // Nome da audience, de onde está vindo
+                    ValidAudience = "Filmes.WebApi"
                 };
             });
         }
@@ -71,6 +77,11 @@ namespace Senai.Peoples.WebApi
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            // Habilita o uso de autenticação
+            app.UseAuthentication();
+
+            // Habilita o uso de mvc
             app.UseMvc();
         }
     }

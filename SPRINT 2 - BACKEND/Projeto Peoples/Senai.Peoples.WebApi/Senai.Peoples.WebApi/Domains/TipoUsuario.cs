@@ -6,19 +6,12 @@ using System.Threading.Tasks;
 
 namespace Senai.Peoples.WebApi.Domains
 {
-    public class Usuario
+    public class TipoUsuario
     {
+        [Required]
         public int Id { get; set; }
 
-        public string Email { get; set; }
-
-        public string Senha { get; set; }
-
-        public int TipoUsuarioId { get; set; }
-
-        public Usuario()
-        {
-
-        }
+        [Required]
+        public string Descricao { get; set; }
     }
 }

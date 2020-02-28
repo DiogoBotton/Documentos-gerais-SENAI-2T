@@ -11,6 +11,8 @@ namespace Senai.Peoples.WebApi.Context
     public class PeoplesContext : DbContext
     {
         public DbSet<Funcionario> Funcionarios { get; set; }
+        public DbSet<Usuario> Usuarios { get; set; }
+        public DbSet<TipoUsuario> TiposUsuarios { get; set; }
 
         public PeoplesContext(DbContextOptions<PeoplesContext> options) : base(options)
         {
@@ -19,6 +21,8 @@ namespace Senai.Peoples.WebApi.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new FuncionarioEntityTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new TipoUsuarioEntityTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new UsuarioEntityTypeConfiguration());
         }
     }
 }
