@@ -10,16 +10,19 @@ namespace Senai.Peoples.WebApi.Repositories
 {
     public class UsuarioRepository : IUsuario
     {
-        public readonly PeoplesContext _context;
+        //public readonly PeoplesContext _context;
 
-        public UsuarioRepository(PeoplesContext context)
-        {
-            _context = context;
-        }
+        //public UsuarioRepository(PeoplesContext context)
+        //{
+        //    _context = context;
+        //}
 
         public Usuario BuscarPorNomeEmail(Usuario usuario)
         {
-            return _context.Usuarios.FirstOrDefault(x => x.Email == usuario.Email && x.Senha == usuario.Senha);
+            using (PeoplesContext _context = new PeoplesContext())
+            {
+                return _context.Usuarios.FirstOrDefault(x => x.Email == usuario.Email && x.Senha == usuario.Senha);
+            }
         }
     }
 }

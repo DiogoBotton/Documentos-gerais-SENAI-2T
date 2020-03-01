@@ -27,7 +27,8 @@ namespace Senai.Peoples.WebApi.Controllers
 
         public UsuarioController()
         {
-            _usuarioRepository = new UsuarioRepository(_context);
+            _context = new PeoplesContext();
+            _usuarioRepository = new UsuarioRepository();
         }
 
         [HttpPost]
@@ -37,12 +38,12 @@ namespace Senai.Peoples.WebApi.Controllers
 
             if (retorno == null)
                 return NotFound("Nome e/ou senha inválidos.");
-
+            
             var informacoesUsuario = new[]
             {
-                new Claim(JwtRegisteredClaimNames.Email, usuario.Email),
-                new Claim(JwtRegisteredClaimNames.Jti, usuario.Id.ToString()), // Jti claimName para ID's
-                new Claim(ClaimTypes.Role, usuario.TipoUsuarioId.ToString())
+                new Claim(JwtRegisteredClaimNames.Email, retorno.Email),
+                new Claim(JwtRegisteredClaimNames.Jti, retorno.Id.ToString()), // Jti claimName para ID's
+                new Claim(ClaimTypes.Role, retorno.TipoUsuarioId.ToString())
             };
 
             // Define a chave de acesso ao token
