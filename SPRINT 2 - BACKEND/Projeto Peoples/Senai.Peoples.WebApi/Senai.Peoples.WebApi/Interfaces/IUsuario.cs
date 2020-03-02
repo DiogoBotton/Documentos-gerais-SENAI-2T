@@ -9,5 +9,9 @@ namespace Senai.Peoples.WebApi.Interfaces
     public interface IUsuario
     {
         Usuario BuscarPorNomeEmail(Usuario usuario);
+        IEnumerable<Usuario> GetAll();
+        Usuario Create(Usuario usuario);
+        Usuario Update(Usuario usuario);
+        void Delete(Usuario usuario);
     }
 }

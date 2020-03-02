@@ -20,15 +20,15 @@ namespace Senai.Peoples.WebApi.Controllers
 
     // Define que é um controlador de API
     [ApiController]
-    public class UsuarioController : ControllerBase
+    public class LoginController : ControllerBase
     {
         public IUsuario _usuarioRepository { get; set; }
         public PeoplesContext _context;
 
-        public UsuarioController()
+        public LoginController()
         {
             _context = new PeoplesContext();
-            _usuarioRepository = new UsuarioRepository();
+            _usuarioRepository = new UsuarioRepository(_context);
         }
 
         [HttpPost]
