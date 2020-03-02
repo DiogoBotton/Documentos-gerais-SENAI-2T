@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Senai.Peoples.WebApi.Domains;
 using Senai.Peoples.WebApi.Interfaces;
 using Senai.Peoples.WebApi.Repositories;
@@ -26,6 +27,11 @@ namespace Senai.Peoples.WebApi.Controllers
             _funcionarioRepository = new FuncionarioRepository();
         }
 
+        /// <summary>
+        /// Lista de funcionários desc or asc
+        /// </summary>
+        /// <param name="ordem"></param>
+        /// <returns>Retorna uma lista de todos os funcionários em ordem decrescente ou crescente</returns>
         [HttpGet("ordem/{ordem}")]
         public IActionResult GetDescOrAsc(string ordem)
         {
@@ -44,6 +50,10 @@ namespace Senai.Peoples.WebApi.Controllers
 
         }
 
+        /// <summary>
+        /// Buscar Todos os funcionários
+        /// </summary>
+        /// <returns>Retorna todos os usuários</returns>
         [HttpGet]
         public IActionResult Get()
         {
@@ -55,7 +65,11 @@ namespace Senai.Peoples.WebApi.Controllers
             return Ok(result);
 
         }
-
+        /// <summary>
+        /// Buscar funcionário por id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>Retorna o funcíonário baseado no id</returns>
         [HttpGet("{id}")]
         public IActionResult GetbyId(int id)
         {
@@ -72,6 +86,11 @@ namespace Senai.Peoples.WebApi.Controllers
             return Ok(result);
         }
 
+        /// <summary>
+        /// Busca por nome de funcionário
+        /// </summary>
+        /// <param name="filtro"></param>
+        /// <returns>Retorna uma lista de funcionários baseado no nome ou sobrenome</returns>
         [HttpGet("filtro/{filtro}")]
         public IActionResult GetByNome(string filtro)
         {
@@ -86,6 +105,13 @@ namespace Senai.Peoples.WebApi.Controllers
             return Ok(listaNomeCompleto);
         }
 
+        /// <summary>
+        /// Cadastra um funcionário
+        /// </summary>
+        /// <param name="funcionario"></param>
+        /// <returns>Retorna um IActionResult com o usuario cadastrado</returns>
+        /// <response code="201">Funcionário criado</response>
+        [ProducesResponseType(StatusCodes.Status201Created)]
         [HttpPost]
         public IActionResult Post(Funcionario funcionario)
         {
@@ -93,13 +119,26 @@ namespace Senai.Peoples.WebApi.Controllers
                 return BadRequest("Valores 'Nome' e/ou 'Sobrenome' vazios.");
 
             var result = _funcionarioRepository.Insert(funcionario);
-            return Ok(result);
+            return Created(" http://localhost:5000/api/Funcionarios", result);
         }
+
+        /// <summary>
+        /// Atualiza as informações de um usuário
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="funcionario"></param>
+        /// <returns>Retorna o usuário atualizado</returns>
         [HttpPut("{id}")]
         public Funcionario Update(int id, Funcionario funcionario)
         {
             return _funcionarioRepository.Update(id, funcionario);
         }
+
+        /// <summary>
+        /// Deletar um funcionário por id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>Retorna uma string de confirmação de ação caso for deletado</returns>
         [HttpDelete("{id}")]
         public string Delete(int id)
         {
