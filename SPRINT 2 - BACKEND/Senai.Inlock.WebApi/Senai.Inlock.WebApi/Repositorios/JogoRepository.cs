@@ -23,12 +23,14 @@ namespace Senai.Inlock.WebApi.Repositorios
 
         public Jogo Create(Jogo jogo)
         {
-            
+            var retorno = _context.Jogos.Add(jogo).Entity;
+            _context.SaveChanges();
+            return retorno;
         }
 
-        public IEnumerable<Jogo> GetAll()
+        public List<Jogo> GetAll()
         {
-            
+            return _context.Jogos.ToList();
         }
     }
 }

@@ -9,6 +9,6 @@ namespace Senai.Inlock.WebApi.Interfaces
     public interface IEstudioRepository
     {
         Estudio GetById(int id);
-        IEnumerable<Estudio> GetAll();
+        List<Estudio> GetAll();
     }
 }

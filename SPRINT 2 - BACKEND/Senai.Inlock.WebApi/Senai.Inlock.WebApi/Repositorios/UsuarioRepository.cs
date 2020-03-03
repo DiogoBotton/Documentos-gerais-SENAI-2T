@@ -25,5 +25,12 @@ namespace Senai.Inlock.WebApi.Repositorios
         {
             return _context.Usuarios.FirstOrDefault(x => x.Email == usuario.Email && x.Senha == usuario.Senha);
         }
+
+        public Usuario Create(Usuario usuario)
+        {
+            var retorno = _context.Usuarios.Add(usuario).Entity;
+            _context.SaveChanges();
+            return retorno;
+        }
     }
 }

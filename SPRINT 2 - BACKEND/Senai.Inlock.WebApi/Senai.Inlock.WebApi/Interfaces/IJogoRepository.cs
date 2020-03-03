@@ -9,6 +9,6 @@ namespace Senai.Inlock.WebApi.Interfaces
     public interface IJogoRepository
     {
         Jogo Create(Jogo jogo);
-        IEnumerable<Jogo> GetAll();
+        List<Jogo> GetAll();
     }
 }

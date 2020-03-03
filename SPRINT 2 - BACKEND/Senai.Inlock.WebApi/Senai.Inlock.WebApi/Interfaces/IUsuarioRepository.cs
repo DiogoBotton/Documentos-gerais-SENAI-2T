@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace Senai.Inlock.WebApi.Interfaces
 {
-    interface IUsuarioRepository
+    public interface IUsuarioRepository
     {
+        Usuario Create(Usuario usuario);
         Usuario BuscarPorEmailSenha(Usuario usuario);
     }
 }

@@ -25,7 +25,7 @@ namespace Senai.Inlock.WebApi.Repositorios
         {
             return _context.Estudios.FirstOrDefault(x => x.Id == id);
         }
-        public IEnumerable<Estudio> GetAll()
+        public List<Estudio> GetAll()
         {
             return _context.Estudios.ToList();
             

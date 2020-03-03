@@ -34,12 +34,29 @@ namespace Senai.Inlock.WebApi.Controllers
         public IActionResult GetAll()
         {
             var retorno = _jogoRepository.GetAll();
-
             var estudios = _estudioRepository.GetAll();
-            var retornao = retorno.Select(x =>
+
+            //Um forEach para iterar sobre cada jogo, e acrescentar um objeto EstudioVM (ViewModel)
+            //retorno.ForEach((x) =>
+            //{
+            //    EstudioVM = estudios.FirstOrDefault(e => e.Id == x.EstudioId);
+            //});
+
+            var jogosEstudios = retorno.Select(x => new
             {
-                x.EstudioVM = estudios.FirstOrDefault(e => e.Id == x.EstudioId); 
+                x.Id,
+                x.Nome,
+                x.Descricao,
+                x.DataLancamento,
+                x.Valor,
+                Estudio = estudios.Where(y => y.Id == x.EstudioId).Select(e => new
+                {
+                    e.Id,
+                    e.Descricao
+                }).FirstOrDefault(),
             }).ToList();
+            //Created("https://localhost:5000/api/Jogos", retorno);
+            return Ok(jogosEstudios);
         }
     }
 }

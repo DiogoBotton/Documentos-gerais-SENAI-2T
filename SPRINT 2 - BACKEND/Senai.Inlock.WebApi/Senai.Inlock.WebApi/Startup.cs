@@ -55,16 +55,16 @@ namespace Senai.Inlock.WebApi
                     ValidateLifetime = true,
 
                     //Forma da criptografia
-                    IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("peoples-chave-autenticacao")),
+                    IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("inlock-chave-autenticacao")),
 
                     //Tempo de expiração do token
                     ClockSkew = TimeSpan.FromMinutes(30),
 
                     // Nome da issuer, de onde está vindo
-                    ValidIssuer = "Senai.Peoples.WebApi",
+                    ValidIssuer = "Senai.InLock.WebApi",
 
                     // Nome da audience, de onde está vindo
-                    ValidAudience = "Senai.Peoples.WebApi"
+                    ValidAudience = "Senai.InLock.WebApi"
                 };
             });
         }
@@ -84,7 +84,7 @@ namespace Senai.Inlock.WebApi
             // specifying the Swagger JSON endpoint.
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Senai.Peoples.WebApi");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Senai.InLock.WebApi");
             });
 
             // Habilita o uso de autenticação

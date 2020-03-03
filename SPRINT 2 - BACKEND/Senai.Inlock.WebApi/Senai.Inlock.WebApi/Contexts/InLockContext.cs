@@ -26,7 +26,8 @@ namespace Senai.Inlock.WebApi.Contexts
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Data Source=.\\SQLEXPRESS; initial catalog=InLockDB_Tarde; Integrated Security=True");
+                optionsBuilder.UseSqlServer("Data Source=.\\SQLEXPRESS; initial catalog=InLock_Tarde; Integrated Security=True");
+                //optionsBuilder.UseSqlServer("Data Source=.\\SQLEXPRESS; initial catalog=InLock_Tarde; user id=sa, password=sa@132");
             }
         }
         //**

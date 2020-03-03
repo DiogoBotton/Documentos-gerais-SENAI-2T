@@ -69,7 +69,7 @@ namespace Senai.Peoples.WebApi
                     ValidateLifetime = true,
 
                     //Forma da criptografia
-                    IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("peoples-chave-autenticacao")),
+                    IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("inlock-chave-autenticacao")),
 
                     //Tempo de expiração do token
                     ClockSkew = TimeSpan.FromMinutes(30),

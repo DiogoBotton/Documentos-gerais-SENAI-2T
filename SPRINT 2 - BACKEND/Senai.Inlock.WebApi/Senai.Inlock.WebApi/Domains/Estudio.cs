@@ -9,8 +9,6 @@ namespace Senai.Inlock.WebApi.Domains
     {
         public int Id { get; set; }
         public string Descricao { get; set; }
-
-        public IEnumerable<Jogo> JogosVM{ get; set; }
         public Estudio()
         {
 

@@ -1,21 +1,21 @@
-﻿using System;
+﻿using Senai.Inlock.WebApi.Domains;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Senai.Inlock.WebApi.Domains
+namespace Senai.Inlock.WebApi.ViewModels
 {
-    public class Jogo
+    public class JogosViewModel
     {
         public int Id { get; set; }
         public string Nome { get; set; }
         public string Descricao { get; set; }
         public DateTime DataLancamento { get; set; }
-        //OBS IMPORTANTE: Com tipo de variável do SQL "MONEY", código devera ser de tipo DECIMAL
-        public decimal Valor { get; set; }
-        public int EstudioId { get; set; }
+        public double Valor { get; set; }
+        public Estudio Estudio { get; set; }
 
-        public Jogo()
+        public JogosViewModel()
         {
 
         }
