@@ -14,15 +14,40 @@ namespace Senai.InLock.WebApi.DatabaseFirst.Controllers
     public class EstudiosController : ControllerBase
     {
         public IEstudioRepository _estudioRepository;
+        public IJogoRepository _jogoRepository;
 
         public EstudiosController()
         {
+            _jogoRepository = new JogoRepository();
             _estudioRepository = new EstudioRepository();
         }
 
+        [HttpGet]
         public IActionResult GetAll()
         {
+            var retorno = _estudioRepository.GetAll();
 
+            return Ok(retorno);
+        }
+        [HttpGet("jogos")]
+        public IActionResult BuscarTodosComJogos()
+        {
+            var estudios = _estudioRepository.GetAll();
+            var jogos = _jogoRepository.GetAll();
+
+            estudios.ForEach(x =>
+            {
+                x.Jogos = jogos.Where(j => j.EstudioId == x.Id).ToList();
+            });
+
+            //estudios.Select(x => new
+            //{
+            //    x.Id,
+            //    x.Descricao,
+            //    a = jogos.Where(j => j.EstudioId == x.Id).ToList()
+            //});
+
+            return Ok(estudios);
         }
     }
 }

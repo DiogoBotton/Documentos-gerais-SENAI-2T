@@ -6,6 +6,13 @@ namespace Senai.InLock.WebApi.DatabaseFirst.Domains
 {
     public partial class InLockContext : DbContext
     {
+        //Linha de comando para mapear o banco de dados
+        /* Scaffold-DbContext "Data Source=DEV1\SQLEXPRESS; initial catalog=InLock_Tarde; User Id=sa;Password=sa@132" 
+         * Microsoft.EntityFrameworkCore.SqlServer 
+         * -OutputDir Domains 
+         * -ContextDir Contexts 
+         * -Context InLockContext
+         */
         public InLockContext()
         {
         }

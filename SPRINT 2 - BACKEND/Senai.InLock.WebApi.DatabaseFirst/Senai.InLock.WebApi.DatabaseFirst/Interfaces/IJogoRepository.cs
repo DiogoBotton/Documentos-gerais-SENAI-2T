@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace Senai.InLock.WebApi.DatabaseFirst.Interfaces
 {
-    public interface IEstudioRepository
+    public interface IJogoRepository
     {
-        Estudios Create(Estudios estudio);
-        List<Estudios> GetAll();
-        Estudios GetbyId(int id);
-        List<Estudios> GetAllWithJogos();
+        List<Jogos> GetAll();
     }
 }
