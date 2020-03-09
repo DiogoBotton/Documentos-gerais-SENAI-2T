@@ -9,5 +9,7 @@ namespace Senai.InLock.WebApi.DatabaseFirst.Interfaces
     public interface IJogoRepository
     {
         List<Jogos> GetAll();
+        Jogos GetById(int id);
+        void UpdatePath(Jogos jogo);
     }
 }

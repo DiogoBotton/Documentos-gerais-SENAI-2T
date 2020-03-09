@@ -15,5 +15,16 @@ namespace Senai.InLock.WebApi.DatabaseFirst.Repositories
         {
             return ctx.Jogos.ToList();
         }
+
+        public Jogos GetById(int id)
+        {
+            return ctx.Jogos.FirstOrDefault(x => x.Id == id);
+        }
+
+        public void UpdatePath(Jogos jogo)
+        {
+            ctx.Jogos.Update(jogo);
+            ctx.SaveChanges();
+        }
     }
 }
